@@ -1,0 +1,17 @@
+name: Clone Docs from Angular portfolio
+
+on:
+  repository_dispatch:
+    types:
+      - clone-docs
+
+jobs:
+  clone-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Angular Portflio Docs
+        uses: actions/checkout@v2
+        with:
+          repository: solo-leveler/angular-portfolio
+          token: ${{ secrets.REPO1_TOKEN }}
+          path: docs
