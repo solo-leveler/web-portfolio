@@ -4,6 +4,8 @@ on:
   repository_dispatch:
     types:
       - clone-docs
+    schedule:
+      - cron: "0 0 17 * *"
 
 jobs:
   clone-docs:
