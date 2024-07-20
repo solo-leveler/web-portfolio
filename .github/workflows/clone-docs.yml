@@ -25,6 +25,8 @@ jobs:
           git clone https://github.com/solo-leveler/angular-portfolio.git repo1
           rsync -av --delete repo1/docs/ docs/
 
+          rm -rf repo1
+
           git add .
           git commit -m "Sync docs from angular-portfolio"
           git push https://x-access-token:${{ secrets.REPO2_TOKEN }}@github.com/solo-leveler/web-portfolio.git HEAD:main
