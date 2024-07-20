@@ -1,19 +1,28 @@
-name: Clone Docs from Angular portfolio
+name: Clone Docs from Angular Portfolio
 
 on:
   repository_dispatch:
     types:
       - clone-docs
-    schedule:
-      - cron: "0 0 17 * *"
+  schedule:
+    - cron: "0 0 17 * *"
 
 jobs:
   clone-docs:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Angular Portflio Docs
+      - name: Checkout Repo2
         uses: actions/checkout@v2
-        with:
-          repository: solo-leveler/angular-portfolio
-          token: ${{ secrets.REPO2_TOKEN }}
-          path: docs
+
+      - name: Clone Angular Portfolio Docs
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+          git clone https://github.com/solo-leveler/angular-portfolio.git repo1
+          rsync -av --delete repo1/docs/ docs/
+
+          git add .
+          git commit -m "Sync docs from angular-portfolio"
+          git push
