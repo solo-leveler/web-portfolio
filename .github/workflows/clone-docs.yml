@@ -17,8 +17,8 @@ jobs:
 
       - name: Clone Angular Portfolio Docs
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
+          git config --global solo-leveler 'github-actions'
+          git config --global shinichiizumi@protonmail.ch 'github-actions@github.com'
 
           git clone https://github.com/solo-leveler/angular-portfolio.git repo1
           rsync -av --delete repo1/docs/ docs/
