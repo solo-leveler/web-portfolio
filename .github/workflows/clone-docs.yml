@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: Checkout Repo2
         uses: actions/checkout@v2
-      with:
-          token: ${{ secrets.REPO2_TOKEN }}
+        with:
+            token: ${{ secrets.REPO2_TOKEN }}
 
       - name: Clone Angular Portfolio Docs
         run: |
