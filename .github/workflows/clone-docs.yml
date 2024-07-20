@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout Repo2
         uses: actions/checkout@v2
+      with:
+          token: ${{ secrets.REPO2_TOKEN }}
 
       - name: Clone Angular Portfolio Docs
         run: |
@@ -25,4 +27,4 @@ jobs:
 
           git add .
           git commit -m "Sync docs from angular-portfolio"
-          git push
+          git push https://x-access-token:${{ secrets.REPO2_TOKEN }}@github.com/solo-leveler/web-portfolio.git HEAD:main
