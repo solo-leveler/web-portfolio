@@ -27,6 +27,9 @@ jobs:
 
           rm -rf repo1
 
+          git fetch origin main
+          git merge origin/main --strategy-option theirs
+
           git add .
           git commit -m "Sync docs from angular-portfolio"
           git push https://x-access-token:${{ secrets.REPO2_TOKEN }}@github.com/solo-leveler/web-portfolio.git HEAD:main
