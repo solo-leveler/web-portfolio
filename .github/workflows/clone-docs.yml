@@ -18,6 +18,8 @@ jobs:
             token: ${{ secrets.REPO2_TOKEN }}
 
       - name: Clone Angular Portfolio Docs
+        env:
+          REPO2_TOKEN: ${{ secrets.REPO2_TOKEN }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
