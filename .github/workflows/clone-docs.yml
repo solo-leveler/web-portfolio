@@ -22,7 +22,7 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
 
-          git clone https://github.com/solo-leveler/angular-portfolio.git repo1
+          git clone https://x-access-token:${REPO2_TOKEN}@github.com/solo-leveler/angular-portfolio.git repo1
           rsync -av --delete repo1/docs/ docs/
 
           rm -rf repo1
